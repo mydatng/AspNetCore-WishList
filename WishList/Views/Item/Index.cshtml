@@ -1,18 +1,19 @@
-﻿@model IEnumerable<WishList.Models.Item>
+﻿@model List<WishList.Models.Item>
 
-@{
-    ViewData["Title"] = "View1";
-}
-
-<h1>Wishlist</h1>
-
-<a asp-action="create">Create New</a>
-<ul>
-    @foreach (var item in Model)
-    {
-    <li>
-        item.Description
-        <a asp-action="delete" asp-route-id="@item.Id" >Delete</a>
-    </li>
+    @{
+    ViewData["Title"] = "Index";
     }
-</ul>
+
+    <h1>Wishlist</h1>
+
+    <a asp-action="create">Wishlist</a>
+    <ul>
+        @foreach (var item in Model)
+        {
+        <li>
+            item.Description
+            <a asp-action="delete" asp-route-id="@item.Id">Delete</a>
+        </li>
+        }
+    </ul>
+
